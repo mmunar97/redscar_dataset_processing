@@ -50,17 +50,19 @@ To perform the segmentation of the staples present in the images of the Redscar 
 Finally, two classical methods based on gradients and fuzzy discrete morphology have also been used for staple segmentation. The script that generates the results can be found in `notebooks/segmentation/Script_StaplesSegmentation_ClassicalMethods.py`. 
 > :warning: A script has been used instead of a notebook due to the fact that classical methods are computationally intensive, and thus can be parallelised on all available CPUs.
 
+> :information_source: The implementation of the classical methods is available at [StaplesDetection package](https://github.com/mmunar97/staples-detection). 
+
 ## Notebooks for infection classification
 
 As indicated in the paper, the steps performed in the baseline method to detect infection are as follows:
 
 1. Determination of the wound region. This is carried out using the Double U-Net trained with 100 epochs for wound segmentation.
 2. Detection and removal of staples from the scene. For the segmentation of staples the U-Net model trained with 100 epochs is applied, while for the removal of staples from the scene the Navier-Stokes' inpainting method is applied. 
-  - The package gathering several inpainting methods is [inPYinting](https://github.com/mmunar97/inPYinting). 
-4. Chromatic staple-free wound segmentation. Chromatic segmentation of the image using fuzzy sets is applied, considering different colour palettes of the HSV colour space.
-  - The package gathering several colour segmentation methods is [ColourSegmentation](https://github.com/mmunar97/colour-segmentation). 
-6. Achromatic colour detection. After chromatic segmentation of the image with step 3), those colours that are achromatic (black, grey and white) are detected and oversampled over the previous segmentation. 
-7. Redness ratio calculation. It calculates how many pixels have been classified as red with respect to the total number of pixels in the image. 
+> :information_source: The package gathering several inpainting methods is available at [inPYinting](https://github.com/mmunar97/inPYinting). 
+3. Chromatic staple-free wound segmentation. Chromatic segmentation of the image using fuzzy sets is applied, considering different colour palettes of the HSV colour space.
+> :information_source: The package gathering several colour segmentation methods is available at [ColourSegmentation](https://github.com/mmunar97/colour-segmentation). 
+4. Achromatic colour detection. After chromatic segmentation of the image with step 3), those colours that are achromatic (black, grey and white) are detected and oversampled over the previous segmentation. 
+5. Redness ratio calculation. It calculates how many pixels have been classified as red with respect to the total number of pixels in the image. 
 
 Having said that, the notebook that calculates all the redness ratios using this process is located at `notebooks/infection_detection/InfectionDetection.ipynb`. Then, the redness ratio obtained for each palette can be found in the following files:
 * For the train set, is located at `notebooks/infection_detection/train_redness_evaluation.json`.
