@@ -53,8 +53,8 @@ As indicated in the paper, the steps performed in the baseline method to detect 
 
 1. Determination of the wound region. This is carried out using the Double U-Net trained with 100 epochs for wound segmentation.
 2. Detection and removal of staples from the scene. For the segmentation of staples the U-Net model trained with 100 epochs is applied, while for the removal of staples from the scene the Navier-Stokes' inpainting method is applied. 
-⋅⋅* The package gathering several inpainting methods is [inPYinting](https://github.com/mmunar97/inPYinting). 
+  - The package gathering several inpainting methods is [inPYinting](https://github.com/mmunar97/inPYinting). 
 4. Chromatic staple-free wound segmentation. Chromatic segmentation of the image using fuzzy sets is applied, considering different colour palettes of the HSV colour space.
-⋅⋅* The package gathering several colour segmentation methods is [ColourSegmentation](https://github.com/mmunar97/colour-segmentation). 
+  - The package gathering several colour segmentation methods is [ColourSegmentation](https://github.com/mmunar97/colour-segmentation). 
 6. Achromatic colour detection. After chromatic segmentation of the image with step 3), those colours that are achromatic (black, grey and white) are detected and oversampled over the previous segmentation. 
 7. Redness ratio calculation. It calculates how many pixels have been classified as red with respect to the total number of pixels in the image. 
