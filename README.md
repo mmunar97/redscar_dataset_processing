@@ -11,7 +11,7 @@ In that paper we propose some baseline methods to solve the following tasks: wou
 
 ## Notebooks and models for wound segmentation
 
-To perform the segmentation of the wound present in the image, three different neural network architectures have been trained (available in [this repository](https://github.com/mmunar97/cnn_architectures)), which in turn have been trained with different parameters (number of epochs, input dimension, etc.). Specifically, the experiments are: 
+To perform the segmentation of the wound present in the images of the Redscar Dataset, three different neural network architectures have been trained (available in [this repository](https://github.com/mmunar97/cnn_architectures)), which in turn have been trained with different parameters (number of epochs, input dimension, etc.). Specifically, the experiments are: 
 
 * Segmentation using the U-Net architecture. The notebook is available at `notebooks/cnn_segmentation/Notebook_WoundSegmentation_UNet.ipynb`. All the models have 65 filters, an input size of $512\times 512\times 3$ and the epochs considered were 25, 55 and 100. The models can be found at the following directions:
   - UNet model for wound segmentation trained with 25 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/UNet/EXPERIMENT1-WOUND/unet1_epochs%3D25_lr%3D3e-4_res%3D0.h5/download).
@@ -27,3 +27,22 @@ To perform the segmentation of the wound present in the image, three different n
   - GSC model for wound segmentation trained with 25 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/GSC/EXPERIMENT1-WOUND/gsc1_epochs%3D25_lr%3D3e-5_res%3D0.h5/download).
   - GSC model for wound segmentation trained with 55 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/GSC/EXPERIMENT1-WOUND/gsc2_epochs%3D55_lr%3D3e-5_res%3D0.h5/download).
   - GSC model for wound segmentation trained with 100 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/GSC/EXPERIMENT1-WOUND/gsc3_epochs%3D100_lr%3D3e-5_res%3D0.h5/download).
+
+## Notebooks and models for staples segmentation
+
+To perform the segmentation of the staples present in the images of the Redscar Dataset, three different neural network architectures have been trained (available in [this repository](https://github.com/mmunar97/cnn_architectures)), which in turn have been trained with different parameters (number of epochs, input dimension, etc.). Specifically, the experiments are: 
+
+* Segmentation using the U-Net architecture. The notebook is available at `notebooks/cnn_segmentation/Notebook_StaplesSegmentation_UNet.ipynb`. All the models have 65 filters, an input size of $512\times 512\times 3$ and the epochs considered were 25, 55 and 100. The models can be found at the following directions:
+  - UNet model for wound segmentation trained with 25 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/UNet/EXPERIMENT2-STAPLES/unet1_epochs%3D25_lr%3D3e-4_res%3D0.h5/download).
+  - UNet model for wound segmentation trained with 55 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/UNet/EXPERIMENT2-STAPLES/unet2_epochs%3D55_lr%3D3e-4_res%3D0.h5/download).
+  - UNet model for wound segmentation trained with 100 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/UNet/EXPERIMENT2-STAPLES/unet3_epochs%3D100_lr%3D3e-4_res%3D0.h5/download).
+
+* Segmentation using the Double U-Net architecture. The notebook is available at `notebooks/cnn_segmentation/Notebook_StaplesSegmentation_DoubleUNet.ipynb`. All the models have an input size of $256\times 256\times 3$ and the epochs considered were 25, 55 and 100. The models can be found at the following directions:
+  - Double U-Net model for wound segmentation trained with 25 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/DoubleUNet/EXPERIMENT2-STAPLES/dun1_epochs%3D25_lr%3D3e-5_res%3D0.h5/download).
+  - Double U-Net model for wound segmentation trained with 55 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/DoubleUNet/EXPERIMENT2-STAPLES/dun2_epochs%3D55_lr%3D3e-5_res%3D0.h5/download).
+  - Double U-Net model for wound segmentation trained with 100 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/DoubleUNet/EXPERIMENT2-STAPLES/dun3_epochs%3D100_lr%3D3e-5_res%3D0.h5/download).
+
+* Segmentation using the GSC architecture. The notebook is available at `notebooks/cnn_segmentation/Notebook_StaplesSegmentation_GSC.ipynb`. All the models have an input size of $512\times 512$ (grayscale) and the epochs considered were 25, 55 and 100. The models can be found at the following directions:
+  - GSC model for wound segmentation trained with 25 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/GSC/EXPERIMENT2-STAPLES/gsc1_epochs%3D25_lr%3D3e-5_res%3D0.h5/download).
+  - GSC model for wound segmentation trained with 55 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/GSC/EXPERIMENT2-STAPLES/gsc2_epochs%3D55_lr%3D3e-5_res%3D0.h5/download).
+  - GSC model for wound segmentation trained with 100 epochs. [Download here](https://sourceforge.net/projects/redscar-dataset-processing/files/keras_models/GSC/EXPERIMENT2-STAPLES/gsc3_epochs%3D100_lr%3D3e-5_res%3D0.h5/download).
