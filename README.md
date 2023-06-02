@@ -58,3 +58,9 @@ As indicated in the paper, the steps performed in the baseline method to detect 
   - The package gathering several colour segmentation methods is [ColourSegmentation](https://github.com/mmunar97/colour-segmentation). 
 6. Achromatic colour detection. After chromatic segmentation of the image with step 3), those colours that are achromatic (black, grey and white) are detected and oversampled over the previous segmentation. 
 7. Redness ratio calculation. It calculates how many pixels have been classified as red with respect to the total number of pixels in the image. 
+
+Having said that, the notebook that calculates all the redness ratios using this process is located at `notebooks/infection_detection/InfectionDetection.ipynb`. Then, the redness ratio obtained for each palette can be found in the following files:
+* For the train set, is located at `notebooks/infection_detection/train_redness_evaluation.json`.
+* For the test set, is located at `notebooks/infection_detection/test_redness_evaluation.json`.
+
+Then, in order to train the different models to classify whether or not an image has infection based on the redness ratios of the different palettes considered, we have the file written with the `R` language that reads and processes this information, which is located at `notebooks/infection_detection/Analysis.R`.
